@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/test', (req, res) => {
+app.get('/report', (req, res) => {
   db.query(`
-  select * from test;
+  select * from report;
   `)
   .then(data => {
     res.json(data.rows);
