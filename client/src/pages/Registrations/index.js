@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-function List() {
+function Registrations() {
 
-  const [list, setList] = useState([]);
+  const [registrations, setRegistrations] = useState([]);
 
   useEffect(() => {
     axios.get('api/report')
     .then(res => {
-      setList(res.data)
+      setRegistrations(res.data)
       console.log(res.data) 
     })
     
@@ -16,7 +16,7 @@ function List() {
 
   return(
     <div>
-      {list.map(item => {
+      {registrations.map(item => {
         return (
           <p>{item.doctor_name}</p>
         )
@@ -25,4 +25,4 @@ function List() {
   )
 }
 
-export default List;
+export default Registrations;
