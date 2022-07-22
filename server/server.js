@@ -6,6 +6,7 @@ const PORT = 8080;
 //db connection
 const db = require('./configs/db.config');
 const reportRouter = require('./routes/report');
+const basicRouter = require('./routes/basic')
 
 app.use(express.json()); //=> req.body
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/report', reportRouter(db));
+app.use('/api/basic', basicRouter(db));
 
 app.listen(PORT, () => {
   console.log(`Yoog Server running on port ${PORT}`)

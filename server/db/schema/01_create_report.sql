@@ -9,3 +9,8 @@ CREATE TABLE report (
   contact_date DATE,
   contact_tool VARCHAR(255)
 );
+
+CREATE TABLE basicTable (
+  id SERIAL PRIMARY KEY,
+  nameExample VARCHAR(255)
+)
